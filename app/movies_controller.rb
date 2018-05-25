@@ -24,16 +24,16 @@ def can_be_created_with_a_hash_of_attributes
   movie
 end
 
-def can_be_created_in_a_block(attributes)
+def can_be_created_in_a_block(args = {title: "Home Alone",release_date: 1990})
   Movie.create do |m|
-    m.save
-  #  id:, title:, director:, lead:, in_theaters:, release_date:
+    m.title = args[:title]
+    m.release_date = args[:release_date]
   end
 end
 
 def can_get_the_first_item_in_the_database
   sql = <<-SQL
-  SELET * FROM 
+  SELET * FROM
   SQL
   DB[:conn].execute(sql)
 end
@@ -96,5 +96,5 @@ def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
-  __
+  ______________rake db:reset
 end
