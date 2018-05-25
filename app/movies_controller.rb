@@ -34,7 +34,7 @@ end
 
 def can_get_the_first_item_in_the_database
 
-  first = Movie.first
+  first = Movie.first[:title]
   first
 end
 
