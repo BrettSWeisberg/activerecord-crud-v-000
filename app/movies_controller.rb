@@ -33,7 +33,7 @@ def can_be_created_in_a_block(args = {title: "Home Alone",release_date: 1990})
 end
 
 def can_get_the_first_item_in_the_database
-binding.pry
+  Movie.first
 end
 
 def can_get_the_last_item_in_the_database
@@ -94,5 +94,5 @@ def can_destroy_all_items_at_once
   10.times do |i|
     Movie.create(title: "Movie_#{i}")
   end
-  ______________rake db:reset
+    Movie.destroy_all
 end
