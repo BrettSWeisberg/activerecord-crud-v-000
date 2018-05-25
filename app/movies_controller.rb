@@ -55,6 +55,7 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
+  Movie.find(:title = "Title")
   __
 end
 
